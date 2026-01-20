@@ -1,6 +1,6 @@
-# Curso Django
+# Projeto Base
 
-Projeto Django configurado com uv e Ruff para desenvolvimento moderno e rápido.
+Projeto Django criado para ser a base de clone para outros projetos.
 
 ## Requisitos
 
