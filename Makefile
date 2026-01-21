@@ -15,16 +15,16 @@ pre-version:
 	git merge develop
 
 major-version: lint pre-version
-	$(PYTHON) -m bumpversion major --message "Upgrade version to {new_version}"
+	uv run bumpversion major --message "Upgrade version to {new_version}"
 	git config --unset gc.auto
 	git branch -f develop main
 
 release-version: lint pre-version
-	$(PYTHON) -m bumpversion minor --message "Upgrade version to {new_version}"
+	uv run bumpversion minor --message "Upgrade version to {new_version}"
 	git config --unset gc.auto
 	git branch -f develop main
 
 fix-version: lint
 	git config gc.auto 0
-	$(PYTHON) -m bumpversion patch --message "Upgrade version to {new_version}"
+	uv run bumpversion patch --message "Upgrade version to {new_version}"
 	git config --unset gc.auto
