@@ -1,10 +1,15 @@
 {
     "recommendations": [
-        "ms-python.python",
         "ms-python.debugpy",
         "ms-python.vscode-python-envs",
         "njpwerner.autodocstring",
         "batisteo.vscode-django",
-        "charliermarsh.ruff"
+        "charliermarsh.ruff",
+        "jcdj666.uv-run",
+        "redhat.vscode-yaml",
+        "tamasfe.even-better-toml",
+        "davidanson.vscode-markdownlint",
+        "ms-python.vscode-pylance",
+        "gruntfuggly.todo-tree"
     ]
 }

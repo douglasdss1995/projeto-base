@@ -1,0 +1,44 @@
+default_language_version:
+  python: python3
+
+exclude: |
+  (?x)^(
+    \.venv/|
+    \.vscode/|
+    \w*_cache/|
+    dist/|
+    build/|
+    migrations/|
+    .*\.erd$
+  )$
+
+# Global settings
+default_stages: [ pre-commit, pre-push ]
+fail_fast: false
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+      - id: check-added-large-files
+      - id: check-docstring-first
+      - id: check-yaml
+      - id: check-json
+        exclude: ^\.vscode/
+      # Check merge conflicts
+      - id: check-merge-conflict
+      # Block large files (>500kb)
+      - id: check-added-large-files
+        args: [ '--maxkb=500' ]
+
+  - repo: local
+    hooks:
+      - id: run-make-lint
+        name: check linting
+        entry: make lint
+        language: system
+        pass_filenames: false
+        always_run: true
